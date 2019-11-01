@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <style>
+  #login{
+  background:red
+  }
+  </style>
+  <title>ML API</title>
+</head>
+
+<body onload="sambit()">
+ <div class="login" id="login">
+	<h1>Employee Attrition</h1>
+
+     <!-- Getting the inputs from the user for predicting the outcome -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	<input type="text" name="satisfaction_level" placeholder="satisfaction_level" required="required" />
+        <input type="text" name="average_monthly_salary" placeholder="average_monthly_salary" required="required" />
+		<input type="text" name="time_spend_company" placeholder="time_spend_company" required="required" />
+	<input type="text" name="Work_accident" placeholder="Work_accident" required="required" />
+	<input type="text" name="promotion_last_5years" placeholder="promotion_last_5years" required="required" />
+	<input type="text" name="IT" placeholder="dept_IT" required="required" />
+	<input type="text" name="RandD" placeholder="dept_RandD" required="required" />
+	<input type="text" name="accounting" placeholder="dept_accounting" required="required" />
+	<input type="text" name="hr" placeholder="dept_hr" required="required" />
+	<input type="text" name="management" placeholder="dept_management" required="required" />
+	<input type="text" name="marketing" placeholder="dept_marketing" required="required" />
+	<input type="text" name="product_mng" placeholder="dept_product_mng" required="required" />
+	<input type="text" name="sales" placeholder="dept_sales" required="required" />
+	<input type="text" name="support" placeholder="dept_support" required="required" />
+	<input type="text" name="technical" placeholder="dept_technical" required="required" />
+	<input type="text" name="high" placeholder="salary_high" required="required" />
+	<input type="text" name="medium" placeholder="salary_medium" required="required" />
+	<input type="text" name="low" placeholder="salary_low" required="required" />
+
+        <button type="submit" class="btn btn-primary btn-block btn-large" >Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction }}
+
+ </div>
+ 
+ <div><h5>By Sambit Nath<h5></div>
+
+</body>
+</html>
